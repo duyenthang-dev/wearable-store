@@ -1,0 +1,219 @@
+#login-from-container {
+   font-size: 1.5rem;
+   min-height: 100vh;
+   background-color: #fff;
+   -webkit-backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
+   background-color: rgba(255, 255, 255, 0.5);
+}
+
+#login-from-container > .row {
+   min-height: 100vh;
+}
+.login-left,
+.register-left {
+   display: flex;
+   flex-direction: column;
+   /* justify-content: center; */
+   gap: 5rem;
+   margin: auto 0;
+   box-shadow: 0 0 2px 0 rgb(145 158 171 / 24%),
+      0 16px 32px -4px rgb(145 158 171 / 24%);
+   padding: 5rem 2rem;
+   border-radius: 10px;
+}
+.login-left button,
+.register-left button {
+   display: inline-block;
+   /* width: 50%; */
+   margin: 0 auto;
+}
+
+.login-left button i,
+.register-left button i {
+   margin-right: 1rem;
+}
+
+.login-left h2,
+.register-left h2 {
+   font-size: 3rem;
+   font-weight: 700;
+   /* letter-spacing: 1px; */
+   /* word-spacing: 3px; */
+   /* margin-left: 5rem; */
+}
+
+.register-left h2 {
+   margin-left: 3rem;
+}
+.login-form__header {
+   display: flex;
+}
+
+.login-form__header .col-2 {
+   text-align: right;
+}
+
+.login-form__header img {
+   display: inline-block;
+}
+
+.login-form__title > h3 {
+   font-size: 2.4rem;
+   font-weight: bold;
+}
+
+.login-form__header p {
+   color: #6a7285;
+   margin-top: 1rem;
+   /* margin-bottom: 3rem; */
+}
+
+.login-form {
+   max-width: 550px;
+   margin: 0 auto;
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   gap: 3rem;
+   justify-content: center;
+}
+
+.login-email,
+.login-password {
+   margin-bottom: 2.5rem;
+}
+
+.login-email input,
+.reg-firstname input, 
+.reg-lastname input,
+.login-password input {
+   margin-bottom: 1rem;
+   padding: 1.6rem 1.5rem;
+}
+
+.remember {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+}
+#remember-me {
+   background: #00ab55;
+   width: 20px;
+   height: 20px;
+   border-radius: 4px;
+   color: #00ab55;
+}
+
+#remember-me:checked {
+   background-color: #00ab55;
+}
+.forgot-psw {
+   text-align: right;
+}
+
+.btn-login,
+.btn-register {
+   margin-top: 3rem;
+   display: block;
+   width: 100%;
+   background: #00ab55;
+   box-shadow: 0 8px 16px 0 rgb(0 171 85 / 24%);
+}
+
+.btn-login:hover,
+.btn-register:hover {
+   background: #007b55;
+}
+
+.bi-facebook {
+   color: #1778f2;
+}
+.bi-google {
+   color: #db4437;
+}
+.login-right {
+   display: flex;
+   /* flex-direction: column; */
+   gap: 3rem;
+}
+
+.social-login {
+   text-align: center;
+}
+.social-account {
+   margin-top: 1rem;
+   display: flex;
+   justify-content: center;
+   gap: 2rem;
+}
+.social-account i {
+   font-size: 3rem;
+}
+.social-account i:hover {
+   cursor: pointer;
+}
+
+.signup-nav {
+   text-align: center;
+}
+.login-email-err,
+.login-psw-err {
+   display: inline-block;
+}
+
+.hide {
+   display: none;
+}
+
+.forgot-psw a,
+.signup-nav a {
+   color: #00ab55;
+   font-weight: 600;
+}
+
+.login-left div,
+.register-left div {
+   padding-right: 3rem;
+}
+
+.login-left h2 {
+   border-right: 0.15em solid #f1592a;
+   white-space: nowrap; /* Keeps the content on a single line */
+   margin: 0 auto;
+   overflow: hidden;
+   letter-spacing: 2px;
+   width: 100%;
+   animation: typing 5s steps(40, end) infinite,
+      blink-caret 4s step-end infinite;
+}
+
+.text1,
+.text2 {
+   border-right: none;
+}
+
+/* keyframe */
+@keyframes typing {
+   from {
+      width: 0;
+   }
+   to {
+      width: 100%;
+   }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+   from,
+   to {
+      border-color: transparent;
+   }
+   50% {
+      border-color: #f1592a;
+   }
+}
+
+.reg-name {
+   margin-bottom: 1.5rem;
+}

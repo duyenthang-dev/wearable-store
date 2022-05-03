@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Đăng nhập</title>
+</head>
+
+<body id="login-wrapper">
+    <main id="login-from-container" class="container">
+        <div class="row h-100">
+            <div class="col-5 login-left">
+                <div>
+                    <h2>Chào mừng bạn quay trở lại</h2>
+                </div>
+                <img src="./images/illustration_login.png" alt="login" width="100%">
+                <button id="back-to-home" class="btn-pri"><i class="bi bi-arrow-return-left"></i>Về trang chủ</button>
+            </div>
+            <div class="col-7 login-right">
+                <div class="login-form">
+                    <div class="login-form__header row">
+                        <div class="login-form__title col-10">
+                            <h3>Đăng nhập vào Wearable</h3>
+                            <p>Điền email và mật khẩu của bạn</p>
+                        </div>
+                        <div class="col-2">
+                            <img src="./images/ic_jwt.png" alt="" width="32px">
+                        </div>
+
+                    </div>
+                    <form action="#">
+                        <div class="login-email">
+                            <input type="text" name="email" id="email" placeholder="Email" class="input-text">
+                            <p class="login-email-err red hide">* Đây là một trường bắt buộc</p>
+                        </div>
+
+                        <div class="login-password">
+                            <input type="password" name="password" id="password" placeholder="Mật khẩu"
+                                class="input-text">
+                            <p class="login-psw-err red hide">* Đây là một trường bắt buộc</ơ>
+                        </div>
+
+                        <div class="row" style="align-items: center;">
+                            <div class="col-6 remember">
+                                <input type="checkbox" name="remember-me" id="remember-me">
+                                <label for="remember-me">Lưu thông tin đăng nhập</label>
+                            </div>
+                            <div class="col-6 forgot-psw">
+                                <a href="#">Quên mật khẩu?</a>
+                            </div>
+                        </div>
+                        <button class="btn-login btn-pri">
+                            Đăng nhập
+                        </button>
+                    </form>
+
+                    <div class="social-login">
+                        <p>Hoặc đăng nhập với</p>
+                        <div class="social-account">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-google"></i>
+                        </div>
+                    </div>
+
+                    <div class="signup-nav">
+                        <p>Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#backtoTop").on('click', function () {
+                $("HTML, BODY").animate({
+                    scrollTop: 0
+                }, 1000, 'swing');
+            });
+        });
+    </script>
+</body>
+
+</html>

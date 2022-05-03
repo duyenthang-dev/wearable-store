@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Trang chủ</title>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="header__top">
+
+        </div>
+        <div class="container">
+            <div class="row header-container py-2">
+                <div class="col-3 py-2">
+                    <a href="#">
+                        <img src="./images/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="col-9 flex">
+                    <div class="header__search">
+                        <form action="#" id="search-form">
+                            <input type="search" name="search" id="search" placeholder="Tìm kiếm tại đây...">
+                            <button type="submit" value="Search" class="btn1">Tìm kiếm</button>
+                        </form>
+                    </div>
+                    <div class="header__login">
+                        <i class="bi bi-person-circle"></i>
+                        <div class="header__login-text">
+                            <p class="sub-text">Xin chào</p>
+                            <p class="primary-text">Hà Duyên Thắng</p>
+                        </div>
+                    </div>
+
+                    <div class="header__wishlist">
+                        <i class="bi bi-heart position-relative">
+                            <span
+                                class="badge bg-danger rounded-circle counter position-absolute top-0 start-100 translate-middle">4</span>
+                        </i>
+                    </div>
+
+                    <div class="header__cart">
+                        <i class="bi bi-cart position-relative">
+                            <span
+                                class="badge bg-danger rounded-circle counter position-absolute top-0 start-100 translate-middle">
+                                4
+                            </span>
+                        </i>
+                    </div>
+                </div>
+            </div>
+            <div class="header-nav">
+                <div class="row header-nav-wrapper">
+                    <div class="col-2">
+                        <a href="#" class="all-category">
+                            <i class="fa-solid fa-bars"></i>
+                            <span>Danh mục</span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-7">
+                        <nav class="menu">
+                            <ul>
+                                <li><a href="./index.html">Trang chủ</a></li>
+                                <li><a href="./shop.html">Cửa hàng</a></li>
+                                <li><a href="./about-us.html">Về chúng tôi</a></li>
+                                <li><a href="./login.html">Đăng nhập, đăng kí</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-3">Deal hot trong tuần</div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="breadcum-container">
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '> &nbsp;';">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="#">Smart Watch</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Apple watch Seri 7</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+    <main id="prod-detail-main" class="container">
+        <div class="row">
+            <div class="col-5">
+                <div class="swiper prodImg-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide-img">
+                            <img src="./images/products/smart-watch/apple-watch7-1.png" alt="" width="80%">
+                        </div>
+
+                        <div class="swiper-slide slide-img">
+                            <img src="./images/products/smart-watch/apple-watch7-2.png" alt="" width="80%">
+                        </div>
+
+                        <div class="swiper-slide slide-img">
+                            <img src="./images/products/smart-watch/apple-watch7-3.png" alt="" width="80%">
+                        </div>
+
+                        <div class="swiper-slide slide-img">
+                            <img src="./images/products/smart-watch/apple-watch7-4.png" alt="" width="80%">
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div thumbsSlider="" class="swiper thumbnail-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./images/products/smart-watch/apple-watch7-1.png" alt="" width="100%">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/products/smart-watch/apple-watch7-2.png" alt="" width="100%">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/products/smart-watch/apple-watch7-3.png" alt="" width="100%">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./images/products/smart-watch/apple-watch7-4.png" alt="" width="100%">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-7 prod-summary">
+                <h1 class="prodDetail-title">
+                    Apple Watch Series 7 45mm GPS Viền nhôm dây cao su
+                </h1>
+                <div class="prod-meta">
+                    <div class="prod-model">Model: MYL92LL/A</div>
+                    <div class="prod-sku">SKU: BE45VGRT</div>
+
+                </div>
+
+                <div class="prod-rate flex-display my-4">
+                    <div class="prod-star">
+                        <i class="bi bi-star-fill yellow primary-text"></i>
+                        <i class="bi bi-star-fill yellow primary-text"></i>
+                        <i class="bi bi-star-fill yellow primary-text"></i>
+                        <i class="bi bi-star-fill yellow primary-text"></i>
+                        <i class="bi bi-star-fill yellow primary-text"></i>
+                    </div>
+                    <span class="rate-counter primary-text">(11)</span>
+                </div>
+                <div class="prod-shortdesc">
+                    Đồng hồ thông minh thế hệ thứ 7 của Appe chính thức xuất hiện dưới tên Apple Watch Series 7, với
+                    thiết kế hiện đại cùng hai kích thước mặt là 41mm và 45mm để phù hợp nhiều người. Hỗ trợ các tính
+                    năng thông minh, theo dõi sức khoẻ cá nhân, trợ lý luyện tập thể thao.
+                </div>
+                <div class="prod-price">
+                    <span class="prod-newprice">10.000.000 đ</span>
+                    <span class="prod-oldprice">11.200.000 đ</span>
+                </div>
+
+                <div class="prod-colors">
+                    <p>Màu sắc</p>
+                    <ul class="color-filter-list">
+                        <li class="position-relative">
+                            <div class="bg-blue"></div>
+                        </li>
+                        <li>
+                            <div class="bg-silver"></div>
+                        </li>
+                        <li>
+                            <div class="bg-grey"></div>
+                        </li>
+                        <li>
+                            <div class="bg-pink"></div>
+                        </li>
+                        <li>
+                            <div class="bg-red"></div>
+                        </li>
+                        <li>
+                            <div class="bg-yellow"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="prod-sizes">
+                    <p>Kích thước</p>
+                    <ul class="prod-size-list">
+                        <li>41mmm</li>
+                        <li>45mm</li>
+
+                    </ul>
+                </div>
+                <div class="clear-option">Xoá lựa chọn</div>
+                <div class="prod-sale">
+                    <div class="prod-sale-title">
+                        <i class="bi bi-gift"></i>
+                        <h5>Ưu đãi hấp dẫn</h5>
+                    </div>
+                    <div class="prod-sale-content">
+                        <p>[HOT] Thu cũ đổi mới - Lên đời giá cao - Trợ giá lên tới 1.000.000 đ</p>
+                        <p>Nhập WSP500 - Giảm 500k cho hoá đơn trên 5 triệu khi thanh toán qua VNPay hoặc TP Bank</p>
+                    </div>
+
+                </div>
+
+                <div class="prod-action-wrapper">
+                    <div class="prod-adjust-qty position-relative">
+                        <button id="increase-qty">
+                            <i class="bi bi-dash-lg"></i>
+                        </button>
+                        <input type="text" name="" id="inp-qty" readonly value="1">
+                        <button id="decrease-qty">
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                    </div>
+                    <div class="prod-addCart">
+                        Thêm vào giỏ
+                    </div>
+                    <div class="prod-addWishlist">
+                        <i class="bi bi-heart"></i>
+                    </div>
+
+                </div>
+
+                <div class="prod-tags">
+                    <i class="bi bi-tags"></i>
+                    <span>Đồng hồ, Apple Watch</span>
+                </div>
+            </div>
+        </div>
+        <div class="more-details">
+            <ul class="details-tab">
+                <li class="active-tab">Đánh giá</li>
+                <li class="inactive-tab">Mô tả</li>
+                <li class="inactive-tab">Thông số kỹ thuật</li>
+            </ul>
+        </div>
+        <div class="review-overview ">
+            <div class="review-rate">
+                <div class="review-star">
+                    <i class="bi bi-star-fill yellow"></i>
+                    <i class="bi bi-star-fill yellow"></i>
+                    <i class="bi bi-star-fill yellow"></i>
+                    <i class="bi bi-star-fill yellow"></i>
+                    <i class="bi bi-star"></i>
+                </div>
+                <div class="review-count">
+                    (20 đánh giá)
+                </div>
+            </div>
+
+            <div class="review-summary">
+                <div class="review-summary-item">
+                    <div class="review-star">
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star-fill yellow"></i>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar w-40p"></div>
+                    </div>
+                    <div class="progess-text">40%</div>
+                </div>
+                <div class="review-summary-item">
+                    <div class="review-star">
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar w-60p"></div>
+                    </div>
+                    <div class="progess-text">60%</div>
+                </div>
+                <div class="review-summary-item">
+                    <div class="review-star">
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar w-20p"></div>
+                    </div>
+                    <div class="progess-text">20%</div>
+                </div>
+                <div class="review-summary-item">
+                    <div class="review-star">
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar w-10p"></div>
+                    </div>
+                    <div class="progess-text">10%</div>
+                </div>
+                <div class="review-summary-item">
+                    <div class="review-star">
+                        <i class="bi bi-star-fill yellow"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar w-0p"></div>
+                    </div>
+                    <div class="progess-text">0%</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex1 gx-5 space-between">
+            <div id="comments">
+                <div class="comment-title">
+                    10 nhận xét
+
+                </div>
+                <ul class="commentlist">
+                    <li>
+                        <div class="comment-item">
+                            <div class="cmt-avt">
+                                <img src="./images/avt.png" alt="avt">
+                            </div>
+                            <div class="cmt-text">
+                                <p class="cmt-info">
+                                    <strong>Hà Duyên Thắng</strong>
+                                    <time datetime="2022-03-26">05/06/2021</time>
+                                </p>
+                                <div class="review-star cmt-star">
+                                    <i class="bi bi-star-fill yellow"></i>
+                                    <i class="bi bi-star-fill yellow"></i>
+                                    <i class="bi bi-star-fill yellow"></i>
+                                    <i class="bi bi-star-fill yellow"></i>
+                                    <i class="bi bi-star"></i>
+                                </div>
+                                <div class="cmt-content card-item">
+                                    Rất thích cách giải quyết và thái độ phục vụ của shop, luôn nhẹ nhàng và từ
+                                    tốn khi giải quyết vấn đề của KH. Sẵn sàng hoàn tiền , đổi trả khi sp lỗi, k tìm lý
+                                    do
+                                    để k bảo hành như những CH khác. Mặc dù mua phải sp lỗi nhưng vì cách phục vụ của
+                                    Wearable
+                                    nên vẫn tin tưởng ủng hộ ❤️và đánh giá 5*****
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="comment-item">
+                            <div class="cmt-avt">
+                                <img src="./images/avt.png" alt="avt">
+                            </div>
+                            <div class="cmt-text">
+                                <p class="cmt-info">
+                                    <strong>Lê Thị Thảo</strong>
+                                    <time datetime="2022-03-26">26/03/2021</time>
+                                </p>
+                                <div class="review-star cmt-star">
+                                    <i class="bi bi-star-fill yellow"></i>
+                                    <i class="bi bi-star-fill yellow"></i>
+                                    <i class="bi bi-star-fill yellow"></i>
+                                    <i class="bi bi-star-fill yellow"></i>
+                                    <i class="bi bi-star-fill yellow"></i>
+                                </div>
+                                <div class="cmt-content card-item">
+                                    Quá ưng ý hài lòng mấy bạn nv TGDĐ. Vui vẻ tận tình. AW mua ngay dịp tết đc giảm giá
+                                    r
+                                    thêm ưu đãi nữa. U là trời tuyệt vời luôn.
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-item" id="review-form">
+                <div class="review-form-title">
+                    <h2>Thêm bình luận</h2>
+                </div>
+                <form action="#" class="review-form">
+                    <p class="rf-note">
+                        Email của bạn sẽ được bảo mật tuyệt đối. Các trường bắt buộc có dấu <span
+                            class="required-fields">*</span>
+                    </p>
+                    <div class="rf-rating">
+                        <p>Rating của bạn <span class="required-fields">*</span></p>
+                        <div class="rf-select">
+
+                            <label for="star-1"><i class="bi bi-star-fill rf-select-item active-star"></i></label>
+                            <label for="star-2"><i class="bi bi-star-fill rf-select-item active-star"></i></label>
+                            <label for="star-3"><i class="bi bi-star-fill rf-select-item active-star"></i></label>
+                            <label for="star-4"><i class="bi bi-star-fill rf-select-item active-star"></i></label>
+                            <label for="star-5"><i class="bi bi-star-fill rf-select-item active-star"></i></label>
+                        </div>
+                        <div class="select-star" style="display: none;">
+                            <input type="radio" name="select-star" id="star-1" value="star-1">
+                            <input type="radio" name="select-star" id="star-2" value="star-2">
+                            <input type="radio" name="select-star" id="star-3" value="star-3">
+                            <input type="radio" name="select-star" id="star-4" value="star-4">
+                            <input type="radio" name="select-star" id="star-5" value="star-5">
+                        </div>
+
+
+                    </div>
+                    <div class="rf-comment">
+                        <label for="form-comment">Viết nhận xét</label>
+                        <textarea name="" id="form-comment" cols="45" rows="8"></textarea>
+                    </div>
+                    <div class="rf-author">
+                        <div class="rf-name">
+                            <label for="author-name">Họ tên <span class="required-fields">*</span></label>
+                            <input type="text" name="rf-name" id="author-name" class="input-text">
+                        </div>
+                        <div class="rf-email">
+                            <label for="author-email">Email <span class="required-fields">*</span></label>
+                            <input type="text" name="rf-name" id="author-email" class="input-text">
+                        </div>
+
+                    </div>
+                    <div class="rf-cookie-consent">
+                        <input type="checkbox" name="save-info" id="save-info">
+                        <label for="save-info">Lưu thông tin vào trình duyệt cho lần bình luận tiếp theo</label>
+                    </div>
+                    <div class="rf-submit">
+                        <input type="submit" value="Bình luận" name="submit" id="submit" class="btn-pri">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="hidden-news">
+        <div class="container">
+            <section class="news hidden">
+                <!-- <img src="./images/banner/news-banner.jpg" alt="news"> -->
+                <h2 class="news__title">
+                    Đăng kí để nhận ưu đãi
+                </h2>
+                <p>Giảm giá 25%<br />Cho lần mua hàng tiếp theo</p>
+                <div class="news_form">
+                    <input type="text" name="subscribe" id="subscribe" placeholder="Điền email của bạn">
+                    <button>Đăng ký</button>
+                </div>
+
+            </section>
+            <section class="footer-link">
+                <div class="footer-logo">
+                    <h1>Wearable store</h1>
+                    <p class="phone">+84 096 444 989</p>
+                    <p class="address">Đường Lý Thường Kiệt, P.10 Q.10, TP.HCM</p>
+                </div>
+                <div class="footer-sitemap row">
+
+                    <div class="col-4 quicklink sitemap-item">
+                        <h3>Liên kết nhanh</h3>
+                        <ul>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Cửa hàng</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4 my-acc sitemap-item">
+                        <h3>Tài khoản của tôi</h3>
+                        <ul>
+                            <li><a href="#">Thông tin tài khoản</a></li>
+                            <li><a href="#">Lịch sử mua</a></li>
+                            <li><a href="#">Giỏ hàng</a></li>
+                            <li><a href="#">Yêu thích</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4 my-company sitemap-item">
+                        <h3>Cửa hàng</h3>
+                        <ul>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Hỗ trợ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="copyright">
+                <p>Copyright &copy; 2022 <span>Wearable Store</span> | Phát triển bởi Duyên Thắng</p>
+            </section>
+        </div>
+
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

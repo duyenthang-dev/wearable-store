@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/shop.css">
+    <title>Cửa hàng</title>
+</head>
+
+<body>
+    
+     <!------------------------------------- HEADER AREA ----------------------------------------->
+    <header id="header">
+        <div class="header__top">
+
+        </div>
+        <div class="container">
+            <div class="row header-container py-2">
+                <div class="col-3 py-2">
+                    <a href="#">
+                        <img src="./images/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="col-9 flex">
+                    <div class="header__search">
+                        <form action="#" id="search-form">
+                            <input type="search" name="search" id="search" placeholder="Tìm kiếm tại đây...">
+                            <button type="submit" value="Search" class="btn1">Tìm kiếm</button>
+                        </form>
+                    </div>
+                    <div class="header__login">
+                        <i class="bi bi-person-circle"></i>
+                        <div class="header__login-text">
+                            <p class="sub-text">Xin chào</p>
+                            <p class="primary-text">Hà Duyên Thắng</p>
+                        </div>
+                    </div>
+
+                    <div class="header__wishlist">
+                        <i class="bi bi-heart position-relative">
+                            <span
+                                class="badge bg-danger rounded-circle counter position-absolute top-0 start-100 translate-middle">4</span>
+                        </i>
+                    </div>
+
+                    <div class="header__cart">
+                        <i class="bi bi-cart position-relative">
+                            <span
+                                class="badge bg-danger rounded-circle counter position-absolute top-0 start-100 translate-middle">
+                                4
+                            </span>
+                        </i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-nav">
+                <div class="row header-nav-wrapper">
+                    <div class="col-2">
+                        <a href="#" class="all-category">
+                            <i class="fa-solid fa-bars"></i>
+                            <span>Danh mục</span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-7">
+                        <nav class="menu">
+                            <ul>
+                                <li><a href="./index.html">Trang chủ</a></li>
+                                <li><a href="./shop.html">Cửa hàng</a></li>
+                                <li><a href="./about-us.html">Về chúng tôi</a></li>
+                                <li><a href="./login.html">Đăng nhập, đăng kí</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-3">Deal hot trong tuần</div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+     <!------------------------------------- BREADCUM AREA ----------------------------------------->
+
+    <div class="breadcum-container">
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '> &nbsp;';">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Cửa hàng</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+    <main class="container shop-container">
+        <div class="row gx-5">
+             <!------------------------------------- FILTER AREA ----------------------------------------->
+            <div class="col-3 shop-category">
+                <div id="product-category" class="filter-option">
+                    <h4>Danh mục sản phẩm</h4>
+                    <ul class="category-list">
+                        <li class="position-relative">Đồng hồ thông minh</li>
+                        <li class="position-relative">Vòng đeo tay</li>
+                        <li class="position-relative">Tai nghe</li>
+                    </ul>
+                </div>
+
+                <div id="price-filter" class="filter-option">
+                    <h4>Lọc theo giá</h4>
+                    <input type="range" class="form-range" min="0" max="100" id="customRange2">
+                    <p for="disabledRange" class="form-label">Giá: <span>100k đ - 10000k đ</span></p>
+                    <button type="submit" id="submit-price-fillter">Áp dụng giá</button>
+                </div>
+
+                <div id="color-filter" class="filter-option">
+                    <h4>Lọc theo màu</h4>
+                    <ul class="color-filter-list">
+                        <li class="position-relative">
+                            <div class="bg-blue"></div>
+                        </li>
+                        <li>
+                            <div class="bg-silver"></div>
+                        </li>
+                        <li>
+                            <div class="bg-grey"></div>
+                        </li>
+                        <li>
+                            <div class="bg-pink"></div>
+                        </li>
+                        <li>
+                            <div class="bg-red"></div>
+                        </li>
+                        <li>
+                            <div class="bg-yellow"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="brand-filter" class="filter-option">
+                    <h4>Lọc theo hãng</h4>
+                    <ul class="category-list">
+                        <li class="position-relative">Apple</li>
+                        <li class="position-relative">Xiaomi</li>
+                        <li class="position-relative">Samsung</li>
+                        <li class="position-relative">Fitbit</li>
+                        <li class="position-relative">Garmin</li>
+                    </ul>
+                </div>
+
+
+            </div>
+             <!------------------------------------- LIST PRODUCT AREA ----------------------------------------->
+            <div class="col-9 shop-list">
+                <div class="row">
+                    <div class="col-12 shop-list-header">
+                        <h1>Apple</h1>
+                        <span>Có tất cả 10 sản phẩm</span>
+                    </div>
+
+                    <div class="col-12 filter-option sort-list">
+                        <span>Sắp xếp theo</span>
+                        <select name="sort-prod" id="sort-prod">
+                            <option value="default">Mặc định</option>
+                            <option value="lastest">Mới nhất</option>
+                            <option value="priceA-Z">Theo giá: Thấp đến cao</option>
+                            <option value="priceZ-A">Theo giá: Cao đến thấp</option>
+                            <option value="ave-rate">Theo rating</option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row gx-lg-5 gy-5 shop-prods">
+                    <div class="col-3 prod-card-large ">
+                        <div class="prod-img position-relative">
+
+                            <img src="./images/products/smart-watch/apple-watch7-1.png" alt="anh" width="90%">
+                            <div class="prod-large-action">
+                                <div class="wishlist">
+                                    <i class="bi bi-heart-fill"></i>
+                                </div>
+                                <div class="add-cart">
+                                    <i class="bi bi-cart-plus-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="prod-title my-4 px-2">
+                            <h4>Apple Watch Series 7 45mm GPS Viền nhôm dây cao su</h4>
+                        </div>
+
+                        <div class="prod-rate flex-display my-4 px-2">
+                            <div class="prod-star">
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                            </div>
+                            <span class="rate-counter primary-text">(11)</span>
+                        </div>
+
+                        <div class="prod-price my-4 px-2">
+                            <span class="price">10.000.000 đ</span>
+                            <span class="old-price">11.200.000 đ</span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-3 prod-card-large ">
+                        <div class="prod-img position-relative">
+
+                            <img src="./images/products/smart-watch/apple-watch7-1.png" alt="anh" width="90%">
+                            <div class="prod-large-action">
+                                <div class="wishlist">
+                                    <i class="bi bi-heart-fill"></i>
+                                </div>
+                                <div class="add-cart">
+                                    <i class="bi bi-cart-plus-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="prod-title my-4 px-2">
+                            <h4>Apple Watch Series 7 45mm GPS Viền nhôm dây cao su</h4>
+                        </div>
+
+                        <div class="prod-rate flex-display my-4 px-2">
+                            <div class="prod-star">
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                            </div>
+                            <span class="rate-counter primary-text">(11)</span>
+                        </div>
+
+                        <div class="prod-price my-4 px-2">
+                            <span class="price">10.000.000 đ</span>
+                            <span class="old-price">11.200.000 đ</span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-3 prod-card-large">
+                        <div class="prod-img  position-relative">
+
+                            <img src="./images/products/smart-watch/apple-watch7-1.png" alt="anh" width="90%">
+                            <div class="prod-large-action">
+                                <div class="wishlist">
+                                    <i class="bi bi-heart-fill"></i>
+                                </div>
+                                <div class="add-cart">
+                                    <i class="bi bi-cart-plus-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="prod-title my-4 px-2">
+                            <h4>Apple Watch Series 7 45mm GPS Viền nhôm dây cao su</h4>
+                        </div>
+
+                        <div class="prod-rate flex-display my-4 px-2">
+                            <div class="prod-star">
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                            </div>
+                            <span class="rate-counter primary-text">(11)</span>
+                        </div>
+
+                        <div class="prod-price my-4 px-2">
+                            <span class="price">10.000.000 đ</span>
+                            <span class="old-price">11.200.000 đ</span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-3 prod-card-large ">
+                        <div class="prod-img position-relative">
+
+                            <img src="./images/products/smart-watch/apple-watch7-1.png" alt="anh" width="90%">
+                            <div class="prod-large-action">
+                                <div class="wishlist">
+                                    <i class="bi bi-heart-fill"></i>
+                                </div>
+                                <div class="add-cart">
+                                    <i class="bi bi-cart-plus-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="prod-title my-4 px-2">
+                            <h4>Apple Watch Series 7 45mm GPS Viền nhôm dây cao su</h4>
+                        </div>
+
+                        <div class="prod-rate flex-display my-4 px-2">
+                            <div class="prod-star">
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                            </div>
+                            <span class="rate-counter primary-text">(11)</span>
+                        </div>
+
+                        <div class="prod-price my-4 px-2">
+                            <span class="price">10.000.000 đ</span>
+                            <span class="old-price">11.200.000 đ</span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-3 prod-card-large">
+                        <div class="prod-img  position-relative">
+
+                            <img src="./images/products/smart-watch/apple-watch7-1.png" alt="anh" width="90%">
+                            <div class="prod-large-action">
+                                <div class="wishlist">
+                                    <i class="bi bi-heart-fill"></i>
+                                </div>
+                                <div class="add-cart">
+                                    <i class="bi bi-cart-plus-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="prod-title my-4 px-2">
+                            <h4>Apple Watch Series 7 45mm GPS Viền nhôm dây cao su</h4>
+                        </div>
+
+                        <div class="prod-rate flex-display my-4 px-2">
+                            <div class="prod-star">
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                            </div>
+                            <span class="rate-counter primary-text">(11)</span>
+                        </div>
+
+                        <div class="prod-price my-4 px-2">
+                            <span class="price">10.000.000 đ</span>
+                            <span class="old-price">11.200.000 đ</span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-3 prod-card-large">
+                        <div class="prod-img  position-relative">
+
+                            <img src="./images/products/smart-watch/apple-watch7-1.png" alt="anh" width="90%">
+                            <div class="prod-large-action">
+                                <div class="wishlist">
+                                    <i class="bi bi-heart-fill"></i>
+                                </div>
+                                <div class="add-cart">
+                                    <i class="bi bi-cart-plus-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="prod-title my-4 px-2">
+                            <h4>Apple Watch Series 7 45mm GPS Viền nhôm dây cao su</h4>
+                        </div>
+
+                        <div class="prod-rate flex-display my-4 px-2">
+                            <div class="prod-star">
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                                <i class="bi bi-star-fill yellow primary-text"></i>
+                            </div>
+                            <span class="rate-counter primary-text">(11)</span>
+                        </div>
+
+                        <div class="prod-price my-4 px-2">
+                            <span class="price">10.000.000 đ</span>
+                            <span class="old-price">11.200.000 đ</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+     <!------------------------------------- FOOTER AREA ----------------------------------------->
+
+    <footer class="hidden-news">
+        <div class="container">
+            <section class="news hidden">
+                <!-- <img src="./images/banner/news-banner.jpg" alt="news"> -->
+                <h2 class="news__title">
+                    Đăng kí để nhận ưu đãi
+                </h2>
+                <p>Giảm giá 25%<br />Cho lần mua hàng tiếp theo</p>
+                <div class="news_form">
+                    <input type="text" name="subscribe" id="subscribe" placeholder="Điền email của bạn">
+                    <button>Đăng ký</button>
+                </div>
+
+            </section>
+            <section class="footer-link">
+                <div class="footer-logo">
+                    <h1>Wearable store</h1>
+                    <p class="phone">+84 096 444 989</p>
+                    <p class="address">Đường Lý Thường Kiệt, P.10 Q.10, TP.HCM</p>
+                </div>
+                <div class="footer-sitemap row">
+
+                    <div class="col-4 quicklink sitemap-item">
+                        <h3>Liên kết nhanh</h3>
+                        <ul>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Cửa hàng</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4 my-acc sitemap-item">
+                        <h3>Tài khoản của tôi</h3>
+                        <ul>
+                            <li><a href="#">Thông tin tài khoản</a></li>
+                            <li><a href="#">Lịch sử mua</a></li>
+                            <li><a href="#">Giỏ hàng</a></li>
+                            <li><a href="#">Yêu thích</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4 my-company sitemap-item">
+                        <h3>Cửa hàng</h3>
+                        <ul>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Hỗ trợ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="copyright">
+                <p>Copyright &copy; 2022 <span>Wearable Store</span> | Phát triển bởi Duyên Thắng</p>
+            </section>
+        </div>
+
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>
