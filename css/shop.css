@@ -5,10 +5,14 @@
    background: #3c74b9;
 }
 
-.bg-silver {
+.bg-silver,
+.bg-white {
    background: #e3e5e3;
 }
 
+.bg-green {
+   background: #00ab55;
+}
 .bg-grey {
    background: #5e5e59;
 }
@@ -744,4 +748,10 @@ input[type="text"] {
 }
 .btn-pri:hover {
    background: linear-gradient(225deg, #f1592a 0%, #dd2955 100%);
+}
+
+#quantity {
+   display: inline-block;
+   width: 100%;
+   text-align: center;
 }

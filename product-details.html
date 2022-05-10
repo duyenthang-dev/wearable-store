@@ -43,8 +43,10 @@
                     <div class="header__login">
                         <i class="bi bi-person-circle"></i>
                         <div class="header__login-text">
-                            <p class="sub-text">Xin chào</p>
-                            <p class="primary-text">Hà Duyên Thắng</p>
+                            <p class="sub-text" id="login-text">Xin chào
+                                <i class="bi bi-box-arrow-right" id="log-out"></i>
+                            </p>
+                            <p class="primary-text" id="username-header">Đăng nhập</p>
                         </div>
                     </div>
 
@@ -56,9 +58,9 @@
                     </div>
 
                     <div class="header__cart">
-                        <i class="bi bi-cart position-relative">
+                        <i class="bi bi-cart position-relative" id="cart-icon">
                             <span
-                                class="badge bg-danger rounded-circle counter position-absolute top-0 start-100 translate-middle">
+                                class="badge bg-danger rounded-circle counter position-absolute top-0 start-100 translate-middle" id="cart-badge">
                                 4
                             </span>
                         </i>
@@ -112,7 +114,7 @@
         <div class="row">
             <div class="col-5">
                 <div class="swiper prodImg-slider">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper " id="large-img" >
                         <div class="swiper-slide slide-img">
                             <img src="./images/products/smart-watch/apple-watch7-1.png" alt="" width="80%">
                         </div>
@@ -134,7 +136,7 @@
                     <div class="swiper-button-prev"></div>
                 </div>
                 <div thumbsSlider="" class="swiper thumbnail-swiper">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper" id="thumbnail-img">
                         <div class="swiper-slide">
                             <img src="./images/products/smart-watch/apple-watch7-1.png" alt="" width="100%">
                         </div>
@@ -154,7 +156,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-7 prod-summary">
+            <div class="col-7 prod-summary" id = "prod-summary">
                 <h1 class="prodDetail-title">
                     Apple Watch Series 7 45mm GPS Viền nhôm dây cao su
                 </h1>
@@ -231,13 +233,14 @@
 
                 <div class="prod-action-wrapper">
                     <div class="prod-adjust-qty position-relative">
-                        <button id="increase-qty">
+                        <!-- <button id="increase-qty">
                             <i class="bi bi-dash-lg"></i>
                         </button>
                         <input type="text" name="" id="inp-qty" readonly value="1">
                         <button id="decrease-qty">
                             <i class="bi bi-plus-lg"></i>
-                        </button>
+                        </button> -->
+                        <input type="number" id="quantity" name="quantity" min="1" max="5" value="0">
                     </div>
                     <div class="prod-addCart">
                         Thêm vào giỏ
@@ -357,7 +360,7 @@
                             </div>
                             <div class="cmt-text">
                                 <p class="cmt-info">
-                                    <strong>Hà Duyên Thắng</strong>
+                                    <strong>Nguyễn Văn A</strong>
                                     <time datetime="2022-03-26">05/06/2021</time>
                                 </p>
                                 <div class="review-star cmt-star">
@@ -387,7 +390,7 @@
                             </div>
                             <div class="cmt-text">
                                 <p class="cmt-info">
-                                    <strong>Lê Thị Thảo</strong>
+                                    <strong>Nguyễn Thị C</strong>
                                     <time datetime="2022-03-26">26/03/2021</time>
                                 </p>
                                 <div class="review-star cmt-star">
@@ -517,7 +520,7 @@
                 </div>
             </section>
             <section class="copyright">
-                <p>Copyright &copy; 2022 <span>Wearable Store</span> | Phát triển bởi Duyên Thắng</p>
+                <p>Copyright &copy; 2022 <span>Wearable Store</span> | Phát triển bởi Ngo Minh Thuan</p>
             </section>
         </div>
 
