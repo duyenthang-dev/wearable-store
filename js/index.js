@@ -1,4 +1,4 @@
-/** ---------------------------- Dữ LIỆU ----------------------------- */
+/** ---------------------------- Dữ LIỆU CỨNG (HARDCODE) ----------------------------- */
 let productList = [
    {
       id: 1,
@@ -233,7 +233,7 @@ if (cartStorage) {
 }
 
 let qty = 1;
-/** -------------------------------------- DOM MANIPULATION --------------------------------------------------------------------------------------------- */
+/** -------------------------------------- DOM SELECTOR --------------------------------------------------------------------------------------------- */
 
 let dealhotWrapper = document.querySelector(".dealhot-list");
 let bestSellerWrapper = document.getElementById("bestseller-products");
@@ -251,8 +251,10 @@ let tblCart = document.getElementById("tblCart");
 let subtotalText = document.getElementById("subtotal-text");
 let totalText = document.getElementById("total-text");
 let shipText = document.getElementById("shippint-text");
-let loginBtn = document.getElementById("login");
 
+let userText = document.querySelector(".header__login-text");
+let loginBtn = document.getElementById("login");
+let signupBtn = document.getElementById("register-btn");
 let loginEmailErr = document.getElementById("login-email-err");
 let loginPasswordErr = document.getElementById("login-psw-err");
 let usernameHeder = document.getElementById("username-header");
@@ -269,8 +271,8 @@ document.querySelector("body").addEventListener("click", function (e) {
       const [currItem] = productList.filter((item) => item.id === currentID);
       const data = JSON.stringify(currItem);
       localStorage.setItem("currentItem", data);
-      window.location.href = "http://127.0.0.1:5500/product-details.html";
-      window.location.replace("http://127.0.0.1:5500/product-details.html");
+      window.location.href = "./product-details.html";
+      window.location.replace("./product-details.html");
    }
 });
 
@@ -297,12 +299,8 @@ document.querySelector("body").addEventListener("click", (e) => {
 // ----- Xử lí sự kiện chọn icon giỏ hàng -> tới trang giỏ hàng
 document.querySelector("body").addEventListener("click", (e) => {
    if (e.target.id === "cart-icon") {
-      window.history.pushState(
-         "cart",
-         "Giỏ hàng",
-         "http://127.0.0.1:5500/cart.html"
-      );
-      window.location.assign("http://127.0.0.1:5500/cart.html");
+      window.history.pushState("cart", "Giỏ hàng", "./cart.html");
+      window.location.assign("./cart.html");
    }
 });
 
@@ -322,7 +320,6 @@ if (cartBadge) {
 // ----- Xử lí sự kiện thêm vào giỏ hàng
 document.querySelector("body").addEventListener("click", (e) => {
    if (e.target.className === "prod-addCart") {
-      // console.log("hehe")
       // b1: check sp đã có trong giỏ hàng chưa: lấy id của item hiện tại từ localStorage, check với cart
       const currentProduct = JSON.parse(localStorage.getItem("currentItem"));
       const currId = Number.parseInt(currentProduct.id);
@@ -331,17 +328,19 @@ document.querySelector("body").addEventListener("click", (e) => {
       const alreadyInCart = cart.find((item) => item.id === currId);
       //  nếu đã có trong giỏ hàng: chỉ cộng dồn tăng  số lượng
       if (alreadyInCart) {
+         console.log("alreadyInCart");
+         console.log(qty);
          cart.forEach(
             (item) =>
-               function () {
-                  if (item.id === currId) {
-                     item.quantity += Number.parseInt(qty);
-                  }
-               }
+               (item.quantity =
+                  item.id === currId
+                     ? (item.quantity += Number.parseInt(qty))
+                     : item.quantity)
          );
       }
       //  nếu chưa có thì push vào giỏ hàng các thông tin của 1 sản phẩm
       else {
+         console.log("new");
          cart.push({
             id: currentProduct.id,
             name: currentProduct.name,
@@ -350,7 +349,9 @@ document.querySelector("body").addEventListener("click", (e) => {
             image: currentProduct.images[0],
          });
       }
+
       // renderCart(cart)
+      console.log(cart);
       document.getElementById("cart-badge").innerHTML = cart.length;
       localStorage.setItem("cart", JSON.stringify(cart));
       window.alert("Đã thêm sản phẩm vào giỏ hàng");
@@ -365,17 +366,10 @@ document.querySelector("body").addEventListener("click", (e) => {
       if (confirm("Xác nhận xoá sản phẩm này khỏi giỏ hàng?") === true) {
          // lấy id sản phẩm đang xoá hiện tjai
          const currID = Number.parseInt(e.target.id);
-         let newCart = [];
-         cart.forEach(function (item) {
-            if (item.id !== currID) {
-               newCart.push(item);
-            }
-         });
-         // cart = [...cart.filter((item) => item.id !== currID)];
-         renderCart(newCart);
-         document.getElementById("cart-badge").innerHTML = newCart.length;
-         console.log(newCart);
-         localStorage.setItem("cart", JSON.stringify(newCart));
+         cart = [...cart.filter((item) => item.id !== currID)];
+         localStorage.setItem("cart", JSON.stringify(cart));
+         renderCart(cart);
+         document.getElementById("cart-badge").innerHTML = cart.length;
       }
    }
 });
@@ -383,12 +377,8 @@ document.querySelector("body").addEventListener("click", (e) => {
 // xử lí sự kiện nhấn nút quay lại trang chủ
 document.querySelector("body").addEventListener("click", (e) => {
    if (e.target.id === "back-to-home") {
-      window.history.pushState(
-         "home",
-         "Trang chủ",
-         "http://127.0.0.1:5500/index.html"
-      );
-      window.location.assign("http://127.0.0.1:5500/index.html");
+      window.history.pushState("home", "Trang chủ", "./index.html");
+      window.location.assign("./index.html");
    }
 });
 
@@ -428,18 +418,16 @@ const formatVND = (num) => {
 // kiểm tra email
 const validateEmail = (email) => {
    if (email === "") {
-      
       loginEmailErr.innerText = "Bạn không được để trống trường này";
-      loginEmailErr.classList.remove("hide")
+      loginEmailErr.classList.remove("hide");
       return false;
    }
    // email chỉ chấp nhận các chữ cái a-z A-Z chữ số, dấu chấm, gạch ngang
    // có có ít nhẩt 1 dấu chấm theo sau kí hiệu @,
    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
    if (!emailPattern.test(email)) {
-      
       loginEmailErr.innerText = "Email không hợp lệ";
-      loginEmailErr.classList.remove("hide")
+      loginEmailErr.classList.remove("hide");
       return false;
    }
    return true;
@@ -448,21 +436,38 @@ const validateEmail = (email) => {
 const validatePassword = (password) => {
    if (password === "") {
       loginPasswordErr.innerText = "Bạn không được để trống trường này";
-      loginPasswordErr.classList.remove("hide")
+      loginPasswordErr.classList.remove("hide");
       return false;
-      
    }
    // mk phải có trên 4 chữ , các kí tự từ a -z, A-Z, các số và dấu châms
    let passwordPattern = /.{4,}([a-zA-Z0-9.])/;
 
    if (!passwordPattern.test(password)) {
-      
       loginPasswordErr.innerText = "Mật khẩu phải có ít nhất 4 kí tự";
-      loginPasswordErr.classList.remove("hide")
+      loginPasswordErr.classList.remove("hide");
       return false;
    }
    return true;
-}
+};
+
+const validateFName = (name) => {
+   if (name.trim() === "") {
+      document.getElementById("reg-fname-err").innerText =
+         "Họ không được để trống";
+      document.getElementById("reg-fname-err").classList.remove("hide");
+      return false;
+   }
+   return true;
+};
+const validateLName = (name) => {
+   if (name.trim() === "") {
+      document.getElementById("reg-lname-er ").innerText =
+         "Tên không được để trống";
+      document.getElementById("reg-lname-err").classList.remove("hide");
+      return false;
+   }
+   return true;
+};
 
 if (loginBtn) {
    loginBtn.addEventListener("click", (e) => {
@@ -474,24 +479,64 @@ if (loginBtn) {
          obj[item.name] = item.value;
       }
       console.log(obj.email);
+
       const data = {
          // user name là phần trước @: abc@gmail.com -> username: abc
-         username: obj.email.split("@")[0],
+         username: obj.email.split("@")[0].substr(0, 10),
       };
       let isOk = false;
-      isOk = validateEmail(obj.email);
-      isOk = validatePassword(obj.password);
-      if (isOk){
+      isOk = validateEmail(obj.email) && validatePassword(obj.password);
+      if (isOk) {
          localStorage.setItem("username", JSON.stringify(data));
-         window.history.pushState(
-            "home",
-            "Trang chủ",
-            "http://127.0.0.1:5500/index.html"
-         );
-         window.location.assign("http://127.0.0.1:5500/index.html");
+         window.history.pushState("home", "Trang chủ", "./index.html");
+         window.location.assign("./index.html");
+         document.getElementById("login-text").innerHTML = `
+         Xin chào
+         <i class="bi bi-box-arrow-right" id="log-out"></i>
+         `;
       }
    });
 }
+
+if (signupBtn) {
+   signupBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const formData = document.getElementById("signup-form").elements;
+      var obj = {};
+      for (var i = 0; i < formData.length; i++) {
+         var item = formData.item(i);
+         obj[item.name] = item.value;
+      }
+      console.log(obj);
+
+      const data = {
+         // user name là phần trước @: abc@gmail.com -> username: abc
+         username: obj[`first-name`] + " " + obj[`last-name`],
+      };
+      let isOk = false;
+      isOk = validateEmail(obj.email) && validatePassword(obj.password);
+      if (isOk) {
+         localStorage.setItem("username", JSON.stringify(data));
+         window.history.pushState("home", "Trang chủ", "./index.html");
+         window.location.assign("./index.html");
+         document.getElementById("login-text").innerHTML = `
+         Xin chào
+         <i class="bi bi-box-arrow-right" id="log-out"></i>
+         `;
+      }
+   });
+}
+
+document.querySelector("body").addEventListener("click", (e) => {
+   if (e.target.id === "log-out") {
+      if (confirm("Bạn chắc chắn muôn đăng xuất?") === true) {
+         localStorage.removeItem("username");
+         window.history.pushState("home", "Trang chủ", "./index.html");
+         window.location.assign("./index.html");
+         document.getElementById("login-text").innerHTML = "Tài khoản";
+      }
+   }
+});
 
 /** ------------------------------------------------------ RENDER UI --------------------------------------------------- */
 // TODO: cập nhật giao diện danh sách sản phẩm hot theo dữ liệu
@@ -541,6 +586,7 @@ const renderDealHotProducts = (list) => {
    });
 };
 
+// TODO: cập nhật giao diện danh sách sản phẩm bán chạy theo dữ liệu
 const renderBestsellerProduct = (list) => {
    if (!bestSellerWrapper) return;
    bestSellerWrapper.innerHTML = "";
@@ -584,6 +630,7 @@ const renderBestsellerProduct = (list) => {
    });
 };
 
+// TODO: cập nhật giao diện danh sách sản phẩm ở trang shop
 const renderShop = (list) => {
    if (!shopListProducts) return;
    shopListProducts.innerHTML = "";
@@ -627,6 +674,7 @@ const renderShop = (list) => {
    });
 };
 
+// TODO: cập nhật giao diện chi tiết sản phẩm
 const renderProductDetail = () => {
    /** cập nhật ảnh sản phẩm */
    const product = JSON.parse(localStorage.getItem("currentItem"));
@@ -739,8 +787,9 @@ const renderProductDetail = () => {
    `;
 };
 
+// TODO: cập nhật giao diện giỏ hàng
 const renderCart = (carts) => {
-   if(!carts || !tblCart) return;
+   if (!carts || !tblCart) return;
    tblCart.innerHTML = "";
    carts.forEach((item) => {
       tblCart.innerHTML += `
@@ -807,10 +856,24 @@ renderShop(productList);
 renderProductDetail();
 renderCart(cart);
 
-const username = JSON.parse(localStorage.getItem('username'));
+const username = JSON.parse(localStorage.getItem("username"));
 
-if(username)
-   usernameHeder.innerHTML = username.username;
+if (username) {
+   userText.innerHTML = `
+   <p class="sub-text" id="login-text">Xin chào
+      <i class="bi bi-box-arrow-right" id="log-out"></i>
+   </p>
+      <p class="primary-text" id="username-header">${username.username}</p>
+   `;
+} else {
+   if (userText) {
+      userText.innerHTML = `
+      <p class="sub-text" id="login-text">Tài khoản
+      </p>
+         <p class="primary-text" id="username-header">Đăng nhập</p>
+      `;
+   }
+}
 
 // ----------------------------- THƯ VIỆN SWIPER ANIMATION -----------------------------
 
